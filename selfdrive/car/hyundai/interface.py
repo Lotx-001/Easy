@@ -108,7 +108,7 @@ class CarInterface(CarInterfaceBase):
         ret.wheelbase = 2.805
         ret.steerRatio = 15.8
     elif candidate in [CAR.K7, CAR.K7_HEV]:
-        ret.mass = 1730. + STD_CARGO_KG
+        ret.mass = 1595. + STD_CARGO_KG
         ret.wheelbase = 2.855
         ret.steerRatio = 12.5
     elif candidate == CAR.K9:
@@ -301,11 +301,11 @@ class CarInterface(CarInterfaceBase):
     ret.longitudinalActuatorDelayUpperBound = 0.15
 
     # steer, gas, brake limitations VS speed
-    ret.steerActuatorDelay = 0.1
+    ret.steerActuatorDelay = 0.08
     ret.steerLimitTimer = 2.5
-    ret.steerRateCost = 0.4
+    ret.steerRateCost = 0.38
     ret.steerMaxBP = [0.]
-    ret.steerMaxV = [1.5]
+    ret.steerMaxV = [0.9]
 
     ret.startAccel = -0.4
     ret.stopAccel = -2.0

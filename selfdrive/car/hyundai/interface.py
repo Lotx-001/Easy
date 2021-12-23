@@ -108,9 +108,12 @@ class CarInterface(CarInterfaceBase):
         ret.wheelbase = 2.805
         ret.steerRatio = 15.8
     elif candidate in [CAR.K7, CAR.K7_HEV]:
-        ret.mass = 1595. + STD_CARGO_KG
-        ret.wheelbase = 2.855
+        ret.mass = 1575. + STD_CARGO_KG
+        ret.wheelbase = 2.85
         ret.steerRatio = 12.5
+        ret.lateralTuning.pid.kf = 0.00005
+        ret.lateralTuning.pid.kiBP, ret.lateralTuning.pid.kpBP = [[0.], [0.]]
+        ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.25], [0.05]]
     elif candidate == CAR.K9:
         ret.mass = 2005. + STD_CARGO_KG
         ret.wheelbase = 3.15
